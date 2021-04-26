@@ -1,4 +1,4 @@
-# Project 4 Part 1
+# Project 4 
 CEG 3120 
 Due 4/9/2021 at 11:59
 
@@ -41,7 +41,8 @@ To configure I used `aws configure` in powershell and it prompt me to enter the 
 
 ## Install DockerHub
 on DockerHub website I made an account and signed in after that I can create a new repo by following this [link](https://hub.docker.com/repositories/create) I made sure to give it a name and make it public.
-
+## Create ECR
+I decided to use DockerHub because of the issues we had with AWS accounts but the command for that after configuring an IAM user with admin permissions. `aws ecr create-repository --repository-name [repoName] --region [region]`
 ## Github Secrets
 after creating a repo on Dockerhub I went to the project repo and added 2 secrets 
 ```
@@ -75,6 +76,13 @@ jobs:
           tag_with_ref: true
 ```
 this is a template that I only edited the `repository:` field to match my docker repository.
+
+## Extra Credit Docker Pull
+to pull an Image with Docker we can use the command 
+
+```
+docker pull (options) (image name):(image tag)
+```
 
 
 
